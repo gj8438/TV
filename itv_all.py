@@ -67,7 +67,7 @@ def modify_urls(url):
 
 def is_url_accessible(url):
     try:
-        response = requests.get(url, timeout=0.3)
+        response = requests.get(url, timeout=0.4)
         if response.status_code == 200:
             return url
     except requests.exceptions.RequestException:
@@ -169,6 +169,7 @@ for url in urls:
                             name = name.replace("标清", "")
                             name = name.replace("频道", "")
                             name = name.replace("-", "")
+                            name = name.replace("CMIPTV", "")
                             name = name.replace(" ", "")
                             name = name.replace("PLUS", "+")
                             name = name.replace("＋", "+")
